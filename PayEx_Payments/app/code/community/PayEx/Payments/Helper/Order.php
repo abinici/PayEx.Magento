@@ -362,6 +362,7 @@ class PayEx_Payments_Helper_Order extends Mage_Core_Helper_Abstract
             ->getCollection()
             ->joinStates()
             ->addFieldToFilter('main_table.status', $status)
+            ->addFieldToFilter('state_table.is_default', 1)
             ->getFirstItem();
         return $status;
     }
